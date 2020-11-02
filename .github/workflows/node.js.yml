@@ -39,4 +39,4 @@ jobs:
          user_name: 'Affan-droid'
          user_email: 'affanraog11@gmail.com'
          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-         repository: ${{ Assignment_2 }} 
+         repository: ${{ github.Assignment_2 }} 
