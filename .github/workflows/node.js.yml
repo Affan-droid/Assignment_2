@@ -31,12 +31,12 @@ jobs:
     - run: npm test
     - name: Deploy
       run: |
-        git config --global user.name Affan-dorid
-        git config --global user.name u2017230@giki.edu.pk
-        git remote set-url origin https://github.com/Affan-droid/Assignment_2
-        npm run deploy
-      env: 
-        user_name: 'Affan-dorid' 
-        user_email: 'u2017230@giki.edu.pk' 
-        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }} 
-        repository:  https://github.com/Affan-droid/Assignment_2  
+       git config --global user.name $user_name
+       git config --global user.email $user_email 
+       git remote set-url origin https://${github_token}@github.com/${repository}
+       npm run deploy
+      env:
+         user_name: 'github-actions[bot]'
+         user_email: 'github-actions[bot]@users.noreply.github.com'
+         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+         repository: ${{ github.repository }} 
