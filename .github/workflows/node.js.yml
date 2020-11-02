@@ -25,19 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-      working-directory: my-app
+
     - run: npm run build --if-present
-      working-directory: my-app
+
     - run: npm test
-      working-directory: my-app
-    - name: Deploy
-      run: |
-        git config --global user.name Affan-dorid
-        git config --global user.name u2017230@giki.edu.pk
-        git remote set-url origin https://github.com/Affan-droid/Assignment_2
-        npm run deploy
-      env: 
-        user_name: 'Affan-dorid' 
-        user_email: 'u2017230@giki.edu.pk' 
-        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }} 
-        repository:  https://github.com/Affan-droid/Assignment_2  
+
+ 
